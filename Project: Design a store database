@@ -1,0 +1,28 @@
+/*Aqui o desafio era criar um banco de dados de uma loja, com no mínimo 15 itens e 5 colunas com características dos itens*/
+/*o desafio ainda pediu que algumas estatísticas fossem calculadas.*/
+
+CREATE TABLE itens(id INTEGER PRIMARY KEY, Marca TEXT, Carro TEXT, Ano INTEGER, Modelo TEXT, valor REAL, estoque INTEGER);
+
+INSERT INTO itens VALUES (1, "Toyota", "Corolla", 2018, "ALTIS", 116990, 4);
+INSERT INTO itens VALUES (2, "Honda", "Civic", 2018, "Touring", 124900, 2);
+INSERT INTO itens VALUES (3, "Chevrolet", "Cruze", 2017, "Ltz", 102990, 3);
+INSERT INTO itens VALUES (4, "Honda", "Fit", 2017, "EXL", 78900, 6);
+INSERT INTO itens VALUES (5, "Honda", "City", 2017, "EXL", 81400, 5);
+INSERT INTO itens VALUES (6, "Kia", "Cerato", 2017, "E.395", 79900, 4);
+INSERT INTO itens VALUES (7, "Kia", "Soul", 2018, "U.261", 87990, 5);
+INSERT INTO itens VALUES (8, "Honda", "WR-V", 2018, "EXL", 83400, 2);
+INSERT INTO itens VALUES (9, "Kia", "Sportage", 2018, "P.787", 139900, 3);
+INSERT INTO itens VALUES (10, "Honda", "HR-V", 2017, "Touring", 105900, 2);
+INSERT INTO itens VALUES (11, "Kia", "Sorento", 2018, "S.556", 209990, 3);
+INSERT INTO itens VALUES (12, "Honda", "CR-V", 2018, "EXL 4x4", 148000, 3);
+INSERT INTO itens VALUES (13, "Citroen", "C4", 2018, "Lounge", 75590, 1);
+INSERT INTO itens VALUES (14, "Honda", "Accord", 2017, "EX V6", 162500, 1);
+INSERT INTO itens VALUES (15, "Kia", "Quoris", 2018, "X.554", 269900, 1);
+
+SELECT * FROM itens ORDER BY valor;
+
+/* item mais caro */
+SELECT carro, marca, MAX(valor) as preço FROM itens;
+
+/* item com maior estoque */
+select carro, marca, max(estoque) as quant_estoque from itens;
